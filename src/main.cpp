@@ -14,8 +14,9 @@ void setup() {
 }
 
 uint64_t last_pressed = 0;
-int last_state = LOW;
-int cur_state = LOW;
+int last_state = 0; // 0 = not transmitted, 1 = transmitted
+int last_btn_state = LOW;
+int cur_btn_state = LOW;
 void loop() {
     wss.loop();
     if(digitalRead(INPUT_PIN) == LOW){
